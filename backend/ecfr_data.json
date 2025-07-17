@@ -1,0 +1,20 @@
+{
+  "parts": [
+    {
+      "part_number": "1",
+      "agency": "Office of the Federal Register",
+      "text": "This is some sample text for part one. It has multiple sentences."
+    },
+    {
+      "part_number": "2",
+      "agency": "Office of the Federal Register",
+      "text": "This is some more sample text for part two. Another sentence here."
+    },
+    {
+      "part_number": "3",
+      "agency": "Department of Compliance",
+      "text": "Sample text for department of compliance. It has two sentences."
+    }
+  ]
+}
+

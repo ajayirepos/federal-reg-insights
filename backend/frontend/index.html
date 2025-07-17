@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Federal Regulations Insights</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { color: #333; }
+    button { margin: 5px; padding: 10px 15px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 5px; max-height: 400px; overflow-y: scroll; }
+  </style>
+</head>
+<body>
+  <h1>Federal Regulations Insights Dashboard</h1>
+
+  <button onclick="fetchData('word-count')">Word Count by Agency</button>
+  <button onclick="fetchData('checksum')">Checksums by Agency</button>
+  <button onclick="fetchData('historical')">Historical Changes</button>
+  <button onclick="fetchData('clarity-score')">Clarity Score</button>
+
+  <pre id="output">Click a button to load data...</pre>
+
+  <script>
+    async function fetchData(endpoint) {
+      document.getElementById('output').textContent = 'Loading...';
+      try {
+        const res = await fetch(`/${endpoint}`);
+        if (!res.ok) throw new Error('Network error');
+        const data = await res.json();
+        document.getElementById('output').textContent = JSON.stringify(data, null, 2);
+      } catch (err) {
+        document.getElementById('output').textContent = 'Error: ' + err.message;
+      }
+    }
+  </script>
+</body>
+</html>
+
